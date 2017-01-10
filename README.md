@@ -32,6 +32,6 @@ Simple. Use `View` for vertically-aligned children. Use `Row` for horizontally-a
 
 Use `dial` to set the position of the children with a number that corresponds to the position of the number on a phone keypad.
 
-123
-456
-789
+123    
+456    
+789    
