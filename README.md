@@ -1,8 +1,8 @@
 # react-native-row
 
-A (proposed) wrapper around the react-native View component enabling concise assignment of flexbox properties
+A wrapper around the react-native View component enabling concise assignment of flexbox properties
 
-## installation 
+## installation (not yet!)
 
     npm install react-native-row
 

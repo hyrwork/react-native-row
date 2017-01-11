@@ -1,0 +1,30 @@
+{
+  "name": "react-native-row",
+  "version": "1.0.0",
+  "description": "A wrapper around the react-native View component enabling concise assignment of flexbox properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ssomnoremac@github.com/hyrwork/react-native-row.git"
+  },
+  "keywords": [
+    "layout",
+    "react",
+    "native",
+    "flex",
+    "row"
+  ],
+  "author": "Cameron Moss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyrwork/react-native-row/issues"
+  },
+  "homepage": "https://github.com/hyrwork/react-native-row#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-native": "^0.40.0"
+  }
+}
