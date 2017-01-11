@@ -28,10 +28,8 @@ the child components of `Row` are centered and horizontally aligned
     
 ## concept
 
-Simple. Use `View` for vertically-aligned children. Use `Row` for horizontally-aligned children. 
+Simple. Use `dial` to set the position of the children with a number that corresponds to the position of the number on a phone keypad.
 
-Use `dial` to set the position of the children with a number that corresponds to the position of the number on a phone keypad.
+![example](example1.jpg)
 
-123    
-456    
-789    
+Use `Row` for horizontally-aligned children. Optionally import `View` from this package instead of from `react-native` and all of your `View` components can use dial as well.
