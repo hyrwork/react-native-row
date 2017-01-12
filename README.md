@@ -32,7 +32,7 @@ But if you are going to the trouble of installing this module consider these oth
 One of the most DRY features of react-native-row is the `dial` prop which allows you to replace
 
 
-    <View style={{flex:1, flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
+    <View style={{flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -126,3 +126,6 @@ Shorthand   | Style Result
 `padding={[20,15,10]}` | `{paddingTop: 20, paddingHorizontal: 15, paddingBottom: 10}`
 `padding={[20,15,10,5]}` | `{paddingTop: 20, paddingRight: 15, paddingBottom: 10, paddingLeft: 5}`
 
+
+
+Contributions and issues very much welcome!
