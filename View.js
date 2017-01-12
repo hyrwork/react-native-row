@@ -11,6 +11,8 @@ const View = (props) => {
         dial = 0,
         flex: _flex,
         style,
+        margin,
+        padding,
         ...otherProps,
     } = props;
 
