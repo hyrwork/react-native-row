@@ -57,7 +57,7 @@ The child components of `Row` are centered and horizontally aligned
 
 Optionally import `View` from this package instead of from `react-native` and all of your `<View/>` components can use dial as well.
 
-    import { View, Row } from react-native-row 
+    import Row, { View } from react-native-row 
         
     <View dial={5}>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
@@ -69,7 +69,7 @@ Optionally import `View` from this package instead of from `react-native` and al
 
 Use `View` without replacing the core RN `View` like so
 
-    import { View as DialView, Row } from 'react-native-view'
+    import Row, { View as DialView } from 'react-native-view'
      
     <DialView dial={5}>
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
