@@ -28,9 +28,9 @@ const Row = (props) => {
             _dial > 3 ? 'center' : 'flex-start';
 
     return (
-        <RNView style={[{flexDirection: 'row', justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
+        <View style={[{flexDirection: 'row', justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
             {props.children}
-        </RNView>
+        </View>
     );
 };
 

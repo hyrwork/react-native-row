@@ -34,7 +34,7 @@ But if you are going to the trouble of installing this module consider these oth
 One of the most DRY features of react-native-row is the `dial` prop which allows you to replace
 
 
-    <View style={{flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
+    <View style={{flex: 1, flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -42,7 +42,7 @@ One of the most DRY features of react-native-row is the `dial` prop which allows
 
 with:
          
-    <Row dial={5}>
+    <Row dial={5} flex>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -54,54 +54,64 @@ The child components of `Row` are centered and horizontally aligned
 
   
     
-![example](example1.jpg)
+![example](examples/example1.jpg)
 
 
 Optionally import `View` from this package instead of from `react-native` and all of your `<View/>` components can use dial as well.
 
     import Row, { View } from react-native-row 
         
-    <View dial={5}>
+    <View dial={5} flex>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
     </View>
     
-![example](example2.jpg)
+![example](examples/example2.jpg)
 
 Use `View` without replacing the core RN `View` like so
 
     import Row, { View as DialView } from 'react-native-view'
      
-    <DialView dial={5}>
+    <DialView dial={5} flex>
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
     </DialView>  
     
     
-You can also use 
+You can also use `spaceBetween` and `spaceAround` to override `justifyContent`:
 
-    <View dial={5} spaceBetween>
+
+    <View dial={5} spaceBetween flex>
         
     ...
-        
     
-    <View dial={5} spaceAround>
+
+    
+![example](examples/example3.jpg)
+
+
+    
+    <View dial={5} spaceAround flex>
     
       
     ...
+    
+![example](examples/example4.jpg)
+
    
-to override `justifyContent`
 
-and 
+and to `stretch` override `alignItems`
 
-    <View dial={5} stretch>
+
+    <View dial={5} stretch flex>
         
     ...
     
+
     
-to override `alignItems`
+    
 
     
     
