@@ -1,6 +1,8 @@
 # react-native-row
 
-A wrapper around the react-native `<View/>` component enabling concise assignment of flexbox properties
+A wrapper around the react-native `<View/>` component enabling concise assignment of flexbox layout properties. 
+
+The idea is to keep JSX as clean as possible, while removing the need to manage stylesheet declarations for common positioning needs. 
 
 ### Installation
 
@@ -24,7 +26,7 @@ with:
         
         
         
-But if you are going to the trouble of installing this module consider these other benifits and weigh the option of reducing Stylesheet usage in favor of inline shorthands. The first of which is `Dial`
+But if you are going to the trouble of installing this module consider these other benefits and weigh the option of reducing stylesheet usage in favor of inline shorthands. The first of which is `dial`
 .       
 
 ### Dial
@@ -75,7 +77,33 @@ Use `View` without replacing the core RN `View` like so
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-    </DialView>
+    </DialView>  
+    
+    
+You can also use 
+
+    <View dial={5} space-between>
+        
+    ...
+        
+    
+    <View dial={5} space-around>
+    
+      
+    ...
+   
+to override `justifyContent`
+
+and 
+
+    <View dial={5} stretch>
+        
+    ...
+    
+    
+to override `alignItems`
+
+    
     
     
 ### Flex
