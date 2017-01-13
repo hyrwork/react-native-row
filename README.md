@@ -54,7 +54,7 @@ The child components of `Row` are centered and horizontally aligned
 
   
     
-![example](examples/example1.jpg)
+<img src="examples/example1.jpg" width="180">
 
 
 Optionally import `View` from this package instead of from `react-native` and all of your `<View/>` components can use dial as well.
@@ -67,7 +67,7 @@ Optionally import `View` from this package instead of from `react-native` and al
       <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
     </View>
     
-![example](examples/example2.jpg)
+<img src="examples/example2.jpg" width="180">
 
 Use `View` without replacing the core RN `View` like so
 
@@ -80,7 +80,7 @@ Use `View` without replacing the core RN `View` like so
     </DialView>  
     
     
-You can also use `spaceBetween` and `spaceAround` to override `justifyContent`:
+You can also use `spaceBetween` to override `justifyContent`:
 
 
     <View dial={5} spaceBetween flex>
@@ -89,8 +89,10 @@ You can also use `spaceBetween` and `spaceAround` to override `justifyContent`:
     
 
     
-![example](examples/example3.jpg)
+<img src="examples/example3.jpg" width="180">
 
+and `spaceAround` 
+    
 
     
     <View dial={5} spaceAround flex>
@@ -98,8 +100,7 @@ You can also use `spaceBetween` and `spaceAround` to override `justifyContent`:
       
     ...
     
-![example](examples/example4.jpg)
-
+<img src="examples/example4.jpg" width="180">
    
 
 and to `stretch` override `alignItems`
