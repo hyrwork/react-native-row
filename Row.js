@@ -7,6 +7,9 @@ const Row = (props) => {
     const {
         dial = 0,
         flex: _flex,
+        spaceBetween,
+        spaceAround,
+        stretch,
         margin,
         padding,
         style,
@@ -18,16 +21,16 @@ const Row = (props) => {
     
     const _shorthandStyles = shorthandStyles(margin, padding)
 
-    const justifyContent = _dial === 0 ? null : _dial % 3 === 0 ? 'flex-end' :
+    const justifyContent = spaceBetween ? 'space-between' : spaceAround ? 'space-around' : _dial === 0 ? null : _dial % 3 === 0 ? 'flex-end' :
             _dial % 3 === 2 ? 'center' : 'flex-start';
 
-    const alignItems = _dial === 0 ? null : _dial > 6 ? 'flex-end' :
+    const alignItems = stretch ? 'stretch' : _dial === 0 ? null : _dial > 6 ? 'flex-end' :
             _dial > 3 ? 'center' : 'flex-start';
 
     return (
-        <RNView style={[{flexDirection: 'row', justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
+        <View style={[{flexDirection: 'row', justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
             {props.children}
-        </RNView>
+        </View>
     );
 };
 

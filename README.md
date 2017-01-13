@@ -1,6 +1,8 @@
 # react-native-row
 
-A wrapper around the react-native `<View/>` component enabling concise assignment of flexbox properties
+A wrapper around the react-native `<View/>` component enabling concise assignment of flexbox layout properties. 
+
+The idea is to keep JSX as clean as possible, while removing the need to manage stylesheet declarations for common positioning needs. 
 
 ### Installation
 
@@ -24,7 +26,7 @@ with:
         
         
         
-But if you are going to the trouble of installing this module consider these other benifits and weigh the option of reducing Stylesheet usage in favor of inline shorthands. The first of which is `Dial`
+But if you are going to the trouble of installing this module consider these other benefits and weigh the option of reducing stylesheet usage in favor of inline shorthands. The first of which is `dial`
 .       
 
 ### Dial
@@ -32,7 +34,7 @@ But if you are going to the trouble of installing this module consider these oth
 One of the most DRY features of react-native-row is the `dial` prop which allows you to replace
 
 
-    <View style={{flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
+    <View style={{flex: 1, flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -40,7 +42,7 @@ One of the most DRY features of react-native-row is the `dial` prop which allows
 
 with:
          
-    <Row dial={5}>
+    <Row dial={5} flex>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -52,30 +54,67 @@ The child components of `Row` are centered and horizontally aligned
 
   
     
-![example](example1.jpg)
+<img src="examples/example1.jpg" width="180">
 
 
 Optionally import `View` from this package instead of from `react-native` and all of your `<View/>` components can use dial as well.
 
     import Row, { View } from react-native-row 
         
-    <View dial={5}>
+    <View dial={5} flex>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
       <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
     </View>
     
-![example](example2.jpg)
+<img src="examples/example2.jpg" width="180">
 
 Use `View` without replacing the core RN `View` like so
 
     import Row, { View as DialView } from 'react-native-view'
      
-    <DialView dial={5}>
+    <DialView dial={5} flex>
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
-    </DialView>
+    </DialView>  
+    
+    
+You can also use `spaceBetween` to override `justifyContent`:
+
+
+    <View dial={5} spaceBetween flex>
+        
+    ...
+    
+
+    
+<img src="examples/example3.jpg" width="180">
+
+and `spaceAround` 
+    
+
+    
+    <View dial={5} spaceAround flex>
+    
+      
+    ...
+    
+<img src="examples/example4.jpg" width="180">
+   
+
+and to `stretch` override `alignItems`
+
+
+    <View dial={5} stretch flex>
+        
+    ...
+    
+
+    
+    
+
+    
     
     
 ### Flex

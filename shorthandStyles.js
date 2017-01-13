@@ -1,4 +1,4 @@
-export default const shorthandStyles = (margin, padding) => {
+const shorthandStyles = (margin, padding) => {
 
     let s = {}
     
@@ -44,3 +44,5 @@ export default const shorthandStyles = (margin, padding) => {
     
     return s
 }
+
+export default shorthandStyles
