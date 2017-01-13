@@ -82,12 +82,12 @@ Use `View` without replacing the core RN `View` like so
     
 You can also use 
 
-    <View dial={5} space-between>
+    <View dial={5} spaceBetween>
         
     ...
         
     
-    <View dial={5} space-around>
+    <View dial={5} spaceAround>
     
       
     ...

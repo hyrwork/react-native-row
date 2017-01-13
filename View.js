@@ -1,8 +1,6 @@
 import React from 'react';
 import RN from 'react-native';
 import shorthandStyles from './shorthandStyles'
-
-
 const RNView = RN.View;
 
 const View = (props) => {
@@ -11,8 +9,8 @@ const View = (props) => {
         dial = 0,
         flex: _flex,
         style,
-        space-between,
-        space-around,
+        spaceBetween,
+        spaceAround,
         stretch,
         margin,
         padding,
@@ -24,7 +22,7 @@ const View = (props) => {
 
     const _shorthandStyles = shorthandStyles(margin, padding)
 
-    const justifyContent = space-between ? 'space-between' : space-around ? 'space-around' _dial === 0 ? null : _dial > 6 ? 'flex-end' :
+    const justifyContent = spaceBetween ? 'space-between' : spaceAround ? 'space-around' : _dial === 0 ? null : _dial > 6 ? 'flex-end' :
             _dial > 3 ? 'center' : 'flex-start';
 
     const alignItems = stretch ? 'stretch' : _dial === 0 ? null : _dial % 3 === 0 ? 'flex-end' :
