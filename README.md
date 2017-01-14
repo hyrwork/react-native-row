@@ -8,6 +8,7 @@ The idea is to keep JSX as clean as possible, while removing the need to manage 
 
     npm install react-native-row
 
+    
 ### Basic Usage
 
 Use react-native-row as little or as much as you want. For instance, you could just use the `<Row/>` to replace 
@@ -26,8 +27,8 @@ with:
         
         
         
-But if you are going to the trouble of installing this module consider these other benefits and weigh the option of reducing stylesheet usage in favor of inline shorthands. The first of which is `dial`
-.       
+But if you are going to the trouble of installing this module consider these other benefits and weigh the option of reducing stylesheet usage in favor of inline shorthands. The first of which is `dial`.
+    
 
 ### Dial
 
@@ -50,8 +51,8 @@ with:
         
 
 
-The child components of `Row` are centered and horizontally aligned 
-
+The child components of `Row` are positioned according to the position of the `dial` number on a phone dial pad. In this case `5` is centered along both axis and, because this is a `Row`, children are horizontally aligned.  
+    
   
     
 <img src="examples/example1.jpg" width="180">
@@ -103,7 +104,7 @@ and `spaceAround`
 <img src="examples/example4.jpg" width="180">
    
 
-and to `stretch` override `alignItems`
+and use `stretch` to override `alignItems`
 
 
     <View dial={5} stretch flex>
