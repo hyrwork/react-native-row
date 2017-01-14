@@ -1,6 +1,6 @@
 {
   "name": "react-native-row",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A wrapper around the react-native View component enabling concise assignment of flexbox properties",
   "main": "index.js",
   "scripts": {
