@@ -3,7 +3,7 @@ const shorthandStyles = (margin, padding) => {
     let s = {}
     
     if (typeof margin === "number") { s['margin'] = margin }
-    else if (typeof margin === "array"){
+    else if (Array.isArray(margin)){
         switch (margin.length) {
             case 1: 
                 s['marginVertical'] = margin[0]
@@ -23,7 +23,7 @@ const shorthandStyles = (margin, padding) => {
     }
     
     if (typeof padding === "number") { s['padding'] = padding }
-    else if (typeof padding === "array"){
+    else if (Array.isArray(padding)){
         switch (padding.length) {
             case 1:
                 s['paddingVertical'] = padding[0]
