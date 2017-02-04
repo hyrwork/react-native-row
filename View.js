@@ -14,6 +14,7 @@ const View = (props) => {
         stretch,
         margin,
         padding,
+        reverse,
         ...otherProps,
     } = props;
 
@@ -28,8 +29,10 @@ const View = (props) => {
     const alignItems = stretch ? 'stretch' : _dial === 0 ? null : _dial % 3 === 0 ? 'flex-end' :
             _dial % 3 === 2 ? 'center' : 'flex-start';
 
+    const flexDirection = reverse ? 'column-reverse' : 'column';
+
     return (
-        <RNView style={[{justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
+        <RNView style={[{flexDirection, justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
             {props.children}
         </RNView>
     );
