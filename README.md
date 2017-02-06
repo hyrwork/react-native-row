@@ -134,7 +134,13 @@ is
 
     <View style={{flex:3, flexDirection: "row"}} />
 
-    
+### Reverse
+
+Use reverse to change `row` to `row-reverse` or `column` to `column-reverse`:
+
+    <Row reverse />
+    <View reverse />
+
 ### Margin and Padding shorthand
 
 Extra benefits are gained by using react-native-view instead of the core `View` in that you can use shorthands for `margin` and `padding` styles that are based on the css shorthand convention
