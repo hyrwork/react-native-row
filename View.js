@@ -14,14 +14,16 @@ const View = (props) => {
         stretch,
         margin,
         padding,
+        position: _position,
         reverse,
         ...otherProps,
     } = props;
 
     const _dial = dial > 0 && dial < 10 ? dial : 0;
+
     const flex = typeof(_flex) === "number" ? _flex : !_flex ? null : 1
 
-    const _shorthandStyles = shorthandStyles(margin, padding)
+    const _shorthandStyles = shorthandStyles(margin, padding, _position)
 
     const justifyContent = spaceBetween ? 'space-between' : spaceAround ? 'space-around' : _dial === 0 ? null : _dial > 6 ? 'flex-end' :
             _dial > 3 ? 'center' : 'flex-start';
@@ -31,8 +33,18 @@ const View = (props) => {
 
     const flexDirection = reverse ? 'column-reverse' : 'column';
 
+    const position = typeof _position === 'number' || Array.isArray(_position) ? 'absolute' : null
+
+    const _style = {
+        flexDirection,
+        justifyContent,
+        alignItems,
+        flex,
+        position,
+    }
+
     return (
-        <RNView style={[{flexDirection, justifyContent, alignItems, flex}, _shorthandStyles, style]} {...otherProps} >
+        <RNView style={[_style, _shorthandStyles, style]} {...otherProps} >
             {props.children}
         </RNView>
     );

@@ -1,4 +1,4 @@
-const shorthandStyles = (margin, padding) => {
+const shorthandStyles = (margin, padding, position) => {
 
     let s = {}
     
@@ -41,7 +41,32 @@ const shorthandStyles = (margin, padding) => {
                 s['paddingLeft'] = padding[3]
         }
     }
-    
+
+    if (typeof position === "number") {
+        s['top'] = position
+        s['left'] = position
+        s['bottom'] = position
+        s['right'] = position
+    }
+    else if (Array.isArray(position)){
+        switch (position.length) {
+            case 1:
+                s['top'] = position[0]
+            case 2:
+                s['top'] = position[0]
+                s['left'] = position[1]
+            case 3:
+                s['top'] = position[0]
+                s['left'] = position[1]
+                s['bottom'] = position[2]
+            case 4:
+                s['top'] = position[0]
+                s['left'] = position[1]
+                s['bottom'] = position[2]
+                s['right'] = position[3]
+        }
+    }
+
     return s
 }
 
