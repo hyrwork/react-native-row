@@ -141,7 +141,7 @@ Use reverse to change `row` to `row-reverse` or `column` to `column-reverse`:
     <Row reverse />
     <View reverse />
 
-### Margin and Padding shorthand
+### Margin, Padding, and Position shorthand
 
 Extra benefits are gained by using react-native-view instead of the core `View` in that you can use shorthands for `margin` and `padding` styles that are based on the css shorthand convention
 
@@ -171,6 +171,18 @@ Shorthand   | Style Result
 `padding={[20,15]}` | `{paddingVertical: 20, paddingHorizontal: 15}`
 `padding={[20,15,10]}` | `{paddingTop: 20, paddingHorizontal: 15, paddingBottom: 10}`
 `padding={[20,15,10,5]}` | `{paddingTop: 20, paddingRight: 15, paddingBottom: 10, paddingLeft: 5}`
+
+#### pos
+
+Shorthand   | Style Result 
+------------ | -------------
+`pos={0}` | `{position: "absolute", top:0, left: 0, bottom: 0, right: 0}`
+`pos={[0]}` | `{position: "absolute", top:0}`
+`pos={[10,10]}` | `{position: "absolute", top:10, left:10}`
+`pos={[0,1,0]}` | `{position: "absolute", top:0, left:1, bottom:0}`
+`pos={[null,null,0,0]}` | `{position: "absolute", top:null, left:null, bottom:0, right:0}`
+
+
 
 
 
