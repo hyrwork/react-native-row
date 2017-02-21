@@ -114,10 +114,6 @@ and use `stretch` to override `alignItems`
 
     
     
-
-    
-    
-    
 ### Flex
 
     <Row flex/>
@@ -182,7 +178,12 @@ Shorthand   | Style Result
 `pos={[0,1,0]}` | `{position: "absolute", top:0, left:1, bottom:0}`
 `pos={[null,null,0,0]}` | `{position: "absolute", top:null, left:null, bottom:0, right:0}`
 
+#### onPress
 
+The `Row` or `View` component will become either `TouchableHighlight`(iOS) or `TouchableNativeFeedback`(Android) when the onPress prop is provided to either.
+Other props will be passed to the component as usual. 
+
+    <Row flex dial={1} onPress={() => null}/>
 
 
 

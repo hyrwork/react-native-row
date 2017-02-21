@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Platform, TouchableNativeFeedback, TouchableHighlight } from 'react-native';
 import shorthandStyles from './shorthandStyles'
 
 const Row = (props) => {
@@ -12,6 +12,7 @@ const Row = (props) => {
         margin,
         padding,
         style,
+        onPress,
         pos,
         reverse,
         ...otherProps,
@@ -31,6 +32,12 @@ const Row = (props) => {
 
     const position = typeof pos === 'number' || Array.isArray(pos) ? 'absolute' : null
 
+    const Component = !otherProps.onPress
+        ? View
+        : Platform.OS === 'android'
+            ? TouchableNativeFeedback
+            : TouchableHighlight
+
     const _style = {
         flexDirection,
         justifyContent,
@@ -38,11 +45,12 @@ const Row = (props) => {
         position,
     };
 
-    return (
-        <View style={[_style, _shorthandStyles, style]} {...otherProps} >
+    return(
+        <Component style={[_style, _shorthandStyles, style]} {...otherProps} >
             {props.children}
-        </View>
+        </Component>
     );
+
 };
 
 export default Row

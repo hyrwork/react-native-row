@@ -1,5 +1,5 @@
 import React from 'react';
-import RN from 'react-native';
+import RN, {TouchableNativeFeedback, TouchableHighlight} from 'react-native';
 import shorthandStyles from './shorthandStyles'
 const RNView = RN.View;
 
@@ -32,6 +32,12 @@ const View = (props) => {
 
     const position = typeof pos === 'number' || Array.isArray(pos) ? 'absolute' : null
 
+    const Component = !otherProps.onPress
+        ? RNView
+        : Platform.OS === 'android'
+            ? TouchableNativeFeedback
+            : TouchableHighlight
+
     const _style = {
         flexDirection,
         justifyContent,
@@ -40,9 +46,9 @@ const View = (props) => {
     }
 
     return (
-        <RNView style={[_style, _shorthandStyles, style]} {...otherProps} >
+        <Component style={[_style, _shorthandStyles, style]} {...otherProps} >
             {props.children}
-        </RNView>
+        </Component>
     );
 };
 
