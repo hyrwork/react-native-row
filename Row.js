@@ -6,6 +6,7 @@ const Row = (props) => {
 
     const {
         dial = 0,
+        flex: _flex,
         spaceBetween,
         spaceAround,
         stretch,
@@ -18,6 +19,8 @@ const Row = (props) => {
     } = props;
 
     const _dial = dial > 0 && dial < 10 ? dial : 0;
+
+    const flex = typeof(_flex) === "number" ? _flex : !_flex ? -1 : 1
 
     const _shorthandStyles = shorthandStyles(margin, padding, pos)
 
@@ -38,6 +41,7 @@ const Row = (props) => {
             : TouchableHighlight
 
     const _style = {
+        flex,
         flexDirection,
         justifyContent,
         alignItems,

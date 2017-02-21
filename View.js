@@ -1,5 +1,5 @@
 import React from 'react';
-import RN, {TouchableNativeFeedback, TouchableHighlight} from 'react-native';
+import RN, {Platform, TouchableNativeFeedback, TouchableHighlight} from 'react-native';
 import shorthandStyles from './shorthandStyles'
 const RNView = RN.View;
 
@@ -7,6 +7,7 @@ const View = (props) => {
 
     const {
         dial = 0,
+        flex: _flex,
         style,
         spaceBetween,
         spaceAround,
@@ -19,6 +20,8 @@ const View = (props) => {
     } = props;
 
     const _dial = dial > 0 && dial < 10 ? dial : 0;
+
+    const flex = typeof(_flex) === "number" ? _flex : !_flex ? -1 : 1
 
     const _shorthandStyles = shorthandStyles(margin, padding, pos)
 
@@ -39,6 +42,7 @@ const View = (props) => {
             : TouchableHighlight
 
     const _style = {
+        flex,
         flexDirection,
         justifyContent,
         alignItems,
