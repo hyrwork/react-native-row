@@ -12,7 +12,6 @@ const Row = (props) => {
         margin,
         padding,
         style,
-        onPress,
         pos,
         reverse,
         ...otherProps,
