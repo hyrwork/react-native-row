@@ -16,12 +16,12 @@ Use react-native-row as little or as much as you want. For instance, you could j
    
         
         
-    <View style={{flexDirection: "row"}}/>
+    <View style={{flexDirection: 'row'}}/>
     
     
 with:
 
-    import Row from react-native-row    
+    import Row from 'react-native-row'    
         
     <Row/>
         
@@ -35,7 +35,7 @@ But if you are going to the trouble of installing this module consider these oth
 One of the most DRY features of react-native-row is the `dial` prop which allows you to replace
 
 
-    <View style={{flex: 1, flexDirection:"row", justifyContent:"center" alignItems:"center"}}>   
+    <View style={{flex: 1, flexDirection:'row', justifyContent:'center' alignItems:'center'}}>   
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
         <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
@@ -55,12 +55,12 @@ The child components of `Row` are positioned according to the position of the `d
     
   
     
-<img src="examples/example1.jpg" width="180">
+<img src='examples/example1.jpg' width="180">
 
 
 Optionally import `View` from this package instead of from `react-native` and all of your `<View/>` components can use dial as well.
 
-    import Row, { View } from react-native-row 
+    import Row, { View } from 'react-native-row' 
         
     <View dial={5} flex>
       <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
@@ -72,7 +72,7 @@ Optionally import `View` from this package instead of from `react-native` and al
 
 Use `View` without replacing the core RN `View` like so
 
-    import Row, { View as DialView } from 'react-native-view'
+    import Row, { View as DialView } from 'react-native-row'
      
     <DialView dial={5} flex>
         <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
@@ -124,7 +124,7 @@ and use `stretch` to override `alignItems`
     
 does this
 
-    <View style={{flex:1, flexDirection: "row"}} />
+    <View style={{flex:1, flexDirection: 'row'}} />
     
 or
 
@@ -132,7 +132,7 @@ or
     
 is
 
-    <View style={{flex:3, flexDirection: "row"}} />
+    <View style={{flex:3, flexDirection: 'row'}} />
 
 ### Reverse
 
@@ -150,7 +150,7 @@ Extra benefits are gained by using react-native-view instead of the core `View` 
     
 becomes
 
-    <View style={{flexDirection: "row", marginVertical: 20, marginHorizontal: 15}} />
+    <View style={{flexDirection: 'row', marginVertical: 20, marginHorizontal: 15}} />
 
 #### margin
 
