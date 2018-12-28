@@ -42,3 +42,40 @@ test("top right bottom left", () => {
     marginLeft: 5
   });
 });
+
+test("[String] margin", () => {
+  expect(getStyles("20")).toEqual({
+    margin: 20
+  });
+});
+
+test("[String] margin padding", () => {
+  expect(getStyles("20", "20")).toEqual({
+    margin: 20,
+    padding: 20
+  });
+});
+
+test("[String] vertical horizontal", () => {
+  expect(getStyles("20 15")).toEqual({
+    marginVertical: 20,
+    marginHorizontal: 15
+  });
+});
+
+test("[String] top horizontal bottom", () => {
+  expect(getStyles("20 15 10")).toEqual({
+    marginTop: 20,
+    marginHorizontal: 15,
+    marginBottom: 10
+  });
+});
+
+test("[String] top right bottom left", () => {
+  expect(getStyles("20 15 10 5")).toEqual({
+    marginTop: 20,
+    marginRight: 15,
+    marginBottom: 10,
+    marginLeft: 5
+  });
+});
