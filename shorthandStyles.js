@@ -3,9 +3,17 @@ const shorthandStyles = (margin, padding) => Object.assign(
   getSpacing('padding', padding)
 )
 
-function getSpacing(type, spacing) {
-  const s = {}
+const parseSpacing(spacing) {
+  if (typeof spacing === "string") {
+    let spacingArray = String.split(spacing, ' ')
+    spacingArray.map(s => Number.parseInt(s))
+    return spacingArray
+  }
+  return spacing
 
+function getSpacing(type, _spacing) {
+  const s = {}
+  const spacing = parseSpacing(_spacing)
   if (typeof spacing === "number") { s[type] = spacing }
   else if (Array.isArray(spacing)){
       switch (spacing.length) {
