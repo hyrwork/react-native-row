@@ -5,11 +5,12 @@ const shorthandStyles = (margin, padding) => Object.assign(
 
 const parseSpacing(spacing) {
   if (typeof spacing === "string") {
-    let spacingArray = String.split(spacing, ' ')
+    let spacingArray = spacing.split(' ')
     spacingArray.map(s => Number.parseInt(s))
     return spacingArray
   }
   return spacing
+}
 
 function getSpacing(type, _spacing) {
   const s = {}
