@@ -152,25 +152,35 @@ becomes
 
     <View style={{flexDirection: 'row', marginVertical: 20, marginHorizontal: 15}} />
 
+### The string shorthand
+
+Passing a string value to the `margin` or `padding` props in both `View` and `Row` components allows you to write the common CSS shorthand syntax
+
+    margin: 10px 5px 10px 5px
+
+as
+
+    margin="10 5 10 5"
+
 #### margin
 
-Shorthand   | Style Result 
------------- | -------------
-`margin={20}` | `{margin: 20}`
-`margin={[20]}` | `{marginVertical: 20}`
-`margin={[20,15]}` | `{marginVertical: 20, marginHorizontal: 15 }`
-`margin={[20,15,10]}` | `{marginTop: 20, marginHorizontal: 15, marginBottom: 10}`
-`margin={[20,15,10,5]}` | `{marginTop: 20, marginRight: 15, marginBottom: 10, marginLeft: 5}`
+| Shorthand               | String Alternative    | Style Result                                                        |
+| ----------------------- | --------------------- | ------------------------------------------------------------------- |
+| `margin={20}`           | `margin="20"`         | `{margin: 20}`                                                      |
+| `margin={[20]}`         | N/A                   | `{marginVertical: 20}`                                              |
+| `margin={[20,15]}`      | `margin="20 15"`      | `{marginVertical: 20, marginHorizontal: 15 }`                       |
+| `margin={[20,15,10]}`   | `margin="20 15 10"`   | `{marginTop: 20, marginHorizontal: 15, marginBottom: 10}`           |
+| `margin={[20,15,10,5]}` | `margin="20 15 10 5"` | `{marginTop: 20, marginRight: 15, marginBottom: 10, marginLeft: 5}` |
 
 #### padding
 
-Shorthand   | Style Result 
------------- | -------------
-`padding={20}` | `{padding: 20}`
-`padding={[20]}` | `{paddingVertical: 20}`
-`padding={[20,15]}` | `{paddingVertical: 20, paddingHorizontal: 15}`
-`padding={[20,15,10]}` | `{paddingTop: 20, paddingHorizontal: 15, paddingBottom: 10}`
-`padding={[20,15,10,5]}` | `{paddingTop: 20, paddingRight: 15, paddingBottom: 10, paddingLeft: 5}`
+| Shorthand                | String Alternative     | Style Result                                                            |
+| ------------------------ | ---------------------- | ----------------------------------------------------------------------- |
+| `padding={20}`           | `padding="20"`         | `{padding: 20}`                                                         |
+| `padding={[20]}`         | N/A                    | `{paddingVertical: 20}`                                                 |
+| `padding={[20,15]}`      | `padding="20 15"`      | `{paddingVertical: 20, paddingHorizontal: 15}`                          |
+| `padding={[20,15,10]}`   | `padding="20 15 10"`   | `{paddingTop: 20, paddingHorizontal: 15, paddingBottom: 10}`            |
+| `padding={[20,15,10,5]}` | `padding="20 15 10 5"` | `{paddingTop: 20, paddingRight: 15, paddingBottom: 10, paddingLeft: 5}` |
 
 
 
