@@ -1,48 +1,38 @@
-const shorthandStyles = (margin, padding) => {
+const shorthandStyles = (margin, padding) => Object.assign(
+  getSpacing('margin', margin),
+  getSpacing('padding', padding)
+)
 
-    let s = {}
-    
-    if (typeof margin === "number") { s['margin'] = margin }
-    else if (Array.isArray(margin)){
-        switch (margin.length) {
-            case 1: 
-                s['marginVertical'] = margin[0]
-            case 2:
-                s['marginVertical'] = margin[0]
-                s['marginHorizontal'] = margin[1]
-            case 3:
-                s['marginTop'] = margin[0]
-                s['marginHorizontal'] = margin[1]
-                s['marginBottom'] = margin[2]
-            case 4:
-                s['marginTop'] = margin[0]
-                s['marginRight'] = margin[1]
-                s['marginBottom'] = margin[2]
-                s['marginLeft'] = margin[3]
-        }
-    }
-    
-    if (typeof padding === "number") { s['padding'] = padding }
-    else if (Array.isArray(padding)){
-        switch (padding.length) {
-            case 1:
-                s['paddingVertical'] = padding[0]
-            case 2:
-                s['paddingVertical'] = padding[0]
-                s['paddingHorizontal'] = padding[1]
-            case 3:
-                s['paddingTop'] = padding[0]
-                s['paddingHorizontal'] = padding[1]
-                s['paddingBottom'] = padding[2]
-            case 4:
-                s['paddingTop'] = padding[0]
-                s['paddingRight'] = padding[1]
-                s['paddingBottom'] = padding[2]
-                s['paddingLeft'] = padding[3]
-        }
-    }
-    
-    return s
+function getSpacing(type, spacing) {
+  const s = {}
+
+  if (typeof spacing === "number") { s[type] = spacing }
+  else if (Array.isArray(spacing)){
+      switch (spacing.length) {
+          case 1:
+              s[`${type}Vertical`] = spacing[0]
+              break
+          case 2:
+              s[`${type}Vertical`] = spacing[0]
+              s[`${type}Horizontal`] = spacing[1]
+              break
+          case 3:
+              s[`${type}Top`] = spacing[0]
+              s[`${type}Horizontal`] = spacing[1]
+              s[`${type}Bottom`] = spacing[2]
+              break
+          case 4:
+              s[`${type}Top`] = spacing[0]
+              s[`${type}Right`] = spacing[1]
+              s[`${type}Bottom`] = spacing[2]
+              s[`${type}Left`] = spacing[3]
+              break
+          default:
+            break
+      }
+  }
+
+  return s
 }
 
 export default shorthandStyles
